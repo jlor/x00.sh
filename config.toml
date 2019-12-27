@@ -1,4 +1,4 @@
-baseURL = "https://x00.sh"
+baseURL = "/"
 title   = "x00 (dot) sh"
 
 DefaultContentLanguage = "en"
