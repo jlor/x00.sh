@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Shorten URL</title>
+    </head>
+    <body>
+        <input type="url" id="urlinput">
+        <input type="text" id="urltext">
+        <button onclick="shorturl()">Short the URL</button>
+    </body>
+    <script>
+        var endpoint = "https://www.jsonstore.io/94efd93326c09d4795f22221f9a012d250b3b3baacb69daad04516ff17e59bad";
+
+        function shorturl() {
+            var shortText = document.getElementById("urltext").value;
+            var url = document.getElementById("urlinput").value;
+
+            $.ajax({
+                'url': endpoint + "/" + shortText,
+                'type': 'POST',
+                'data': JSON.stringify(url),
+                'dataType': 'json',
+                'contentType': 'application/json; charset=utf-8'
+            })
+        }
+    </script>
+</html>
